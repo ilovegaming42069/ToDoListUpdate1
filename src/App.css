@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-container {
+  width: 350px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-heading {
+  color: #007bff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: medium;
+}
+
+.input-container, .filter-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-box-todo {
+  flex-grow: 1;
+  margin-right: 10px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  outline: none;
+}
+
+.add-btn, .clear-all-btn, .filter-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.clear-all-btn {
+  background-color: #dc3545;
+  color: white;
+  width: 100%;
+}
+
+.filter-buttons button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.filter-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.list-item {
+  background-color: #17a2b8;
+  color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item .todo-item, .list-item .todo-status {
+  margin: 0;
+}
+
+.list-item.not-started {
+  background-color: #ffc107;
+}
+
+.list-item.in-progress {
+  background-color: #fd7e14;
+}
+
+.list-item.done {
+  background-color: #28a745;
+}
+
+.list-item.done .todo-item {
+  text-decoration: line-through;
+}
+
+
+.icons, .status-btn, .icon-delete {
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 5px;
+  border: none;
+  background: none;
+}
+
+.icons i, .status-btn {
+  padding: 5px;
+  border: none;
+  background: none;
+}
+
+.icon-delete:hover {
+  transform: scale(1.2);
+  color: #dc3545;
+}
+
+.status-btn:hover {
+  transform: scale(1.2);
+  color: #28a745;
+}
+
+/* Ensures no outline or box-shadow appears on focus for buttons */
+button:focus, .status-btn:focus, .icon-delete:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.todo-content {
+  flex-grow: 1;
+}
+
+/* App.css */
+/* Login container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Lighter shade for a more modern look */
+}
+
+/* Input fields */
+.form-input {
+  padding: 12px 15px; /* Slightly larger padding for a more tactile feel */
+  margin: 10px 0; /* Ensure consistent margin for all inputs */
+  border: 1px solid #ccc; /* Subtle borders for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  background-color: #fff; /* Ensure inputs are distinctly white */
+}
+
+/* Buttons */
+.form-button, .google-signin-button {
+  padding: 10px 20px; /* More generous padding for easier interaction */
+  margin-top: 15px; /* Spacing above buttons */
+  border: none;
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover states */
+}
+
+.form-button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color for primary button */
+}
+
+.form-button:hover {
+  background-color: #0056b3; /* Darker on hover for primary button */
+}
+
+.google-signin-button {
+  background-color: #db4437; /* Google sign-in button color */
+  color: white; /* Text color for Google sign-in button */
+  margin-top: 10px; /* Consistent top margin for Google button */
+}
+
+.google-signin-button:hover {
+  background-color: #b33629; /* Darker on hover for Google button */
+}
+
+/* Enhancements for visual feedback */
+.form-input:focus {
+  border-color: #007bff; /* Highlight focus on input fields */
+  outline: none; /* Remove default focus outline */
+}
+/* Add more styles as needed */
