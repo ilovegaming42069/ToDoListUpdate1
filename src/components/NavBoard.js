@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { signOut, updateProfile } from 'firebase/auth';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import for Firebase Storage
-import { auth, storage } from '../firebase/firebase-config'; // Import Firebase authentication and storage
+import { auth, storage, db } from '../firebase/firebase-config'; // Import Firebase authentication, storage, and Firestore
+import {doc, updateDoc } from 'firebase/firestore';
 
 const NavBoard = ({ currentUser }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -14,14 +15,24 @@ const NavBoard = ({ currentUser }) => {
 
   const handleUsernameChange = async () => {
     try {
+      // Update the user's display name in authentication
       await updateProfile(auth.currentUser, {
         displayName: newUsername,
       });
+      
+      // Update the username field in Firestore
+      const userDocRef = doc(db, 'users', currentUser.uid);
+      await updateDoc(userDocRef, {
+        username: newUsername,
+      });
+  
       setNewUsername(''); // Clear input field after successful update
     } catch (error) {
       console.error('Error updating username:', error.message);
     }
   };
+  
+  
 
   const handleProfilePicChange = async (e) => {
     const file = e.target.files[0];
